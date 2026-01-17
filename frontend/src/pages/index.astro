@@ -1,0 +1,38 @@
+---
+import "../styles/global.css";
+import { Header } from "../components/Header";
+import { RecorderIsland } from "../components/RecorderIsland";
+import { CTABlock } from "../components/CTABlock";
+import { isPreviewMode } from "../lib/config";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <meta
+      name="description"
+      content="Local voice transcription using Whisper. Run with Docker Compose."
+    />
+    <title>Vocalize</title>
+  </head>
+  <body>
+    <div class="min-h-screen">
+      <main class="container mx-auto px-6 py-12 max-w-2xl">
+        <Header client:load />
+        <div class="flex flex-col gap-10">
+          <RecorderIsland client:load />
+          <CTABlock client:load />
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
